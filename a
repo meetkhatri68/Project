@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body
+	{
+		background-color: darkblue;
+		
+	}
+</style>
+<script type="text/javascript">
+	
+	function Name()
+	{
+		var Name = document.getElementById('Name');
+		var Email = document.getElementById('Email');
+		var Number = document.getElementById('Number');
+		var Massage = document.getElementById('Massage')
+		
+		if(isalphabet(Name,"please enter letters only"))
+		{
+			if(isnumber(Number,"please Enter only Number"))
+			{
+				if(isemail(Email,"Please Enter Only Email"))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+		
+		function notempty(elem,helpermsg)
+		{
+			if(elem.value.length == 0)
+			{
+				alert(helpermsg);
+				elem.focus();
+				return false;
+			}
+			return true;
+		}
+		
+		function isalphabet(elem,helpermsg)
+		{
+			var alpha = /^[a-zA-Z]+$/;
+			if(elem.value.match(alpha))
+			{
+				return true;
+			}
+			else
+			{
+				alert(helpermsg);
+				elem.focus();
+				return false;
+			}
+		}
+		function isemail(elem,helpermsg)
+		{
+			var emailex = /^[\w\.\+]+@[a-zA-Z0-9]+$/;
+			if(elem.value.match(emailex))
+			{
+				return true;
+			}
+			else
+			{
+				alert(helpermasg);
+				elem.focus();
+				return false;
+			}
+		}
+		function isnumber(elem,helpermsg)
+		{
+			var num = /^[0-9]+$/;
+			if(elem.value.match(num))
+			{
+				return true;
+			}
+			else
+			{
+				alert(helpermasg);
+				elem.focus();
+				return false;
+			}
+		}
+	}
+</script>
+</head>
+<body> 
+		
+			
+			<h1 style="color: whitesmoke; text-align: center; font-size: 50px;">Loging Form</h1>
+			
+			<form>
+				<center>
+				<input style="border: black; padding: 20px;" type="text" id="Name" placeholder="Name"/>
+				<br>
+				<br>
+				<br>
+				<br>
+				<input style="border: black; padding: 20px;"type="text" id="Email" placeholder="Email"/>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<input style="border: black; padding: 20px;"type="text" id="Number" placeholder="Number"/>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<input style="border: black; padding: 40px;"type="text" id="Massage" placeholder="Meassage"/>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<input style="border: black; padding: 20px;" type="submit" value="Login"
+				</center>
+			</form>
+		  	
+		</div>
+		
+</body>
+</html>
